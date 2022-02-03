@@ -25,4 +25,4 @@
       - `cmp symbol_1,...,symbol_n`
 
 ## first version example
-image::example1.png
+![Screenshot](example1.png)
