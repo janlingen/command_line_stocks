@@ -5,11 +5,11 @@
     - `pip install -r requirements.txt`
   - create an account at https://www.yahoofinanceapi.com/dashboard to get your `API TOKEN`
     - write the API TOKEN into `.env`
-  - now you can do 100 free requests a day
+  - you can do 100 free requests a day
 
 ## how to use CommandLineStocks:
   - there are two versions
-  - RECOMMENDED: first version works python IDLE like, `run stock_idle.py`
+  - <span style="color: green">RECOMMENDED:</span>RECOMMENDED: first version works python IDLE like, `run stock_idle.py`
   - second version works like a pure CMD tool, run `python stock_cl.py command symbol/name`
     - list of commands:
       - `symbol name, finds the symbol for a given stockname, for example symbol Microsoft`
