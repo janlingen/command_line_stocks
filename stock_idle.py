@@ -4,6 +4,8 @@ from rich import print
 from rich.panel import Panel
 from tabulate import tabulate
 
+# Recommended Version !!!
+
 
 def symbol(suggestion):
     lst = information_provider.get_symbol_suggestions(suggestion)
