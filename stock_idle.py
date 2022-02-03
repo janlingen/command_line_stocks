@@ -1,5 +1,4 @@
-
-import information_provider
+import information_filter
 from rich import print
 from rich.panel import Panel
 from tabulate import tabulate
@@ -8,58 +7,58 @@ from tabulate import tabulate
 
 
 def symbol(suggestion):
-    lst = information_provider.get_symbol_suggestions(suggestion)
+    lst = information_filter.get_symbol_suggestions(suggestion)
     for x in lst:
         print(
             f"[red]-->[/red] [green]{x[0]}[/green] [red]>>[/red] [bold][blue]{x[1]}[/blue][/bold]")
 
 
 def name(symbol):
-    data = information_provider.get_name(symbol)
+    data = information_filter.get_name(symbol)
     print(f"[red]-->[/red] [green]{data}[/green]")
 
 
 def marketcap(symbol):
-    data = information_provider.get_marketcap(symbol)
+    data = information_filter.get_marketcap(symbol)
     print(
         f"[red]-->[/red] [green]{data[0]}[/green] [green]{data[1]}[/green]")
 
 
 def price(symbol):
-    data = information_provider.get_price(symbol)
+    data = information_filter.get_price(symbol)
     print(
         f"[red]-->[/red] [green]{data[0]}[/green] [green]{data[1]}[/green]")
 
 
 def trailingpe(symbol):
-    data = information_provider.get_trailing_pe(symbol)
+    data = information_filter.get_trailing_pe(symbol)
     print(f"[red]-->[/red] [green]{data}[/green]")
 
 
 def forwardpe(symbol):
-    data = information_provider.get_forward_pe(symbol)
+    data = information_filter.get_forward_pe(symbol)
     print(f"[red]-->[/red] [green]{data}[/green]")
 
 
 def yeareps(symbol):
-    data = information_provider.get_year_eps(symbol)
+    data = information_filter.get_year_eps(symbol)
     print(
         f"[red]-->[/red] [green]{data[0]}[/green] [green]{data[1]}[/green]")
 
 
 def yearpe(symbol):
-    data = information_provider.get_year_pe(symbol)
+    data = information_filter.get_year_pe(symbol)
     print(f"[red]-->[/red] [green]{data}[/green]")
 
 
 def twoav(symbol):
-    data = information_provider.get_two_hundred_day_average(symbol)
+    data = information_filter.get_two_hundred_day_average(symbol)
     print(
         f"[red]-->[/red] [green]{data[0]}[/green] [green]{data[1]}[/green]")
 
 
 def divyield(symbol):
-    data = information_provider.get_trailing_dividend_yield(symbol)
+    data = information_filter.get_trailing_dividend_yield(symbol)
     print(f"[red]-->[/red] [green]{data}[/green]")
 
 
@@ -68,7 +67,7 @@ def cmp(symbols):
     print("[red]-[/red]"*105)
     lst = []
     for x in symbols_lst:
-        lst.append(information_provider.get_stock(x))
+        lst.append(information_filter.get_stock(x))
     print(tabulate(lst, headers=["Name", "MarketCap",
           "Price", "TwoHundred Av.", "TrailingPE", "Div. Yield", "Currency"]))
     print("[red]-[/red]"*105)
