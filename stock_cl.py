@@ -75,14 +75,6 @@ def divyield(symbol: str):
 @app.command()
 def cmp(symbols: str):
     symbols_lst = symbols.split(",")
-    lst = []
-    for x in symbols_lst:
-        lst.append(information_provider.get_stock(x))
-
-
-@app.command()
-def cmp(symbols: str):
-    symbols_lst = symbols.split(",")
     print("[red]-[/red]"*105)
     lst = []
     for x in symbols_lst:
