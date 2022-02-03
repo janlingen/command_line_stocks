@@ -9,7 +9,7 @@
 
 ## how to use CommandLineStocks:
   - there are two versions
-  - first version works python IDLE like, `run stock_idle.py`
+  - RECOMMENDED: first version works python IDLE like, `run stock_idle.py`
   - second version works like a pure CMD tool, run `python stock_cl.py command symbol/name`
     - list of commands:
       - `symbol name, finds the symbol for a given stockname, for example symbol Microsoft`
