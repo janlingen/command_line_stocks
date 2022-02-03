@@ -6,7 +6,7 @@ import json
 
 def get_stock_data(stock_symbol):
     load_dotenv()
-    TOKEN = getenv("TOKEN2")
+    TOKEN = getenv("TOKEN")
     stocks = "https://yfapi.net/v6/finance/quote"
     headers = {'x-api-key': TOKEN}
     querystring = {"symbols": stock_symbol}
