@@ -24,5 +24,5 @@
       - `divyield symbol`
       - `cmp symbol_1,...,symbol_n`
 
-## examples
- 
+## first version example
+image::example1.png
