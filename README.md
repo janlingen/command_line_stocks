@@ -12,8 +12,10 @@ As we all know, comparing stocks is often an essential process when deciding whe
   - there are two versions
   - :heavy_exclamation_mark:Important: first version works python IDLE like, run `python stock_idle.py`:heavy_exclamation_mark:
   - second version works like a pure CMD tool, run `python stock_cl.py command symbol/name`
-  - `help` to show the commands again
-    - list of commands:
+  - list of commands:
+      - `help` to show all commands and instructions
+      - `clear` to clear the terminal
+      - `quit` to end the program
       - `symbol name`, finds the symbol for a given stockname, for example symbol Microsoft
       - `name symbol`, returns the companys name, for example name MSFT
       - `price symbol`
@@ -25,6 +27,7 @@ As we all know, comparing stocks is often an essential process when deciding whe
       - `twoav symbol`
       - `divyield symbol`
       - `cmp symbol_1,...,symbol_n`, compares multiple stocks in a table
+   - second version works like a pure CMD tool, run `python stock_cl.py command symbol/name`
 
 ## first version example
 ![Screenshot](example1.png)
