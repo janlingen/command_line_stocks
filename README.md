@@ -10,7 +10,7 @@ As we all know, comparing stocks is often an essential process when deciding whe
 
 ## how to use CommandLineStocks:
   - there are two versions
-  - :heavy_exclamation_mark:Important: first version works python IDLE like,run `python stock_idle.py`:heavy_exclamation_mark:
+  - :heavy_exclamation_mark:Important: first version works python IDLE like, run `python stock_idle.py`:heavy_exclamation_mark:
   - second version works like a pure CMD tool, run `python stock_cl.py command symbol/name`
     - list of commands:
       - `symbol name`, finds the symbol for a given stockname, for example symbol Microsoft
