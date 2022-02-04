@@ -73,8 +73,7 @@ def cmp(symbols):
     print("[red]-[/red]"*105)
 
 
-def start():
-    user_input = ""
+def help():
     print(Panel(
         """- find a symbol by typing [red]symbol suggestions [/red]
     - use a command followed by symbol
@@ -85,17 +84,25 @@ def start():
     - to compare multiple stocks use: [red]cmp symbol_1,...,symbol_n[/red]""",
         title="[bold][green]:chart_increasing: Welcome to CommandLineStocks :chart_increasing:[/green][/bold]",
         expand=False))
+
+
+def start():
+    user_input = ""
+    help()
     active = True
     while active:
         try:
             user_input = input(">>> ").split()
             if len(user_input) == 2:
                 try:
-                    eval(f"{user_input[0]}('{user_input[1]}')")
+                    if len(user_input) == 2:
+                        eval(f"{user_input[0]}('{user_input[1]}')")
                 except Exception:
                     print("[bold][red]Try again![/bold][/red]")
             elif user_input[0] == "quit":
                 active = False
+            elif user_input[0] == "help":
+                help()
         except:
             continue
 
