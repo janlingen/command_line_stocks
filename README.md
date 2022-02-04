@@ -17,6 +17,7 @@ As we all know, comparing stocks is often an essential process when deciding whe
   - list of commands:
       - `help` to show all commands and instructions
       - `clear` to clear the terminal
+      - `market` to get a market overview
       - `quit` to end the program
       - `symbol name`, finds the symbol for a given stockname, for example symbol Microsoft
       - `name symbol`, returns the companys name, for example name MSFT
