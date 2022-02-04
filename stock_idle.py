@@ -1,7 +1,11 @@
+from time import sleep
+import os
 import information_filter
+import os
 from rich import print
 from rich.panel import Panel
 from tabulate import tabulate
+
 
 # Recommended Version !!!
 
@@ -77,35 +81,45 @@ def help():
     print(Panel(
         """- find a symbol by typing [red]symbol suggestions [/red]
     - use a command followed by symbol
-    - for example [red]price AAPL[/red]
-    - type [red]quit[/red] to end the programm
     - list of commands:
-    [bold][magenta]name, marketcap, price, trailingpe, forwardpe, yeareps, yearpe, twoav, divyield[/magenta][/bold]
-    - to compare multiple stocks use: [red]cmp symbol_1,...,symbol_n[/red]""",
+    - [bold][magenta]name, marketcap, price, trailingpe, forwardpe, yeareps, yearpe, twoav, divyield[/magenta][/bold]
+    - for example [red]price AAPL[/red]
+    - to compare multiple stocks use: [red]cmp symbol_1,...,symbol_n[/red]
+    - for help use [red]help[/red]
+    - to clear the consol use [red]clear[/red]
+    - to close the programm use [red]quit[/red]""",
         title="[bold][green]:chart_increasing: Welcome to CommandLineStocks :chart_increasing:[/green][/bold]",
         expand=False))
 
 
+def screen_clear():
+    if os.name == 'posix':
+        _ = os.system('clear')
+    else:
+        _ = os.system('cls')
+
+
 def start():
     user_input = ""
-    help()
     active = True
     while active:
         try:
             user_input = input(">>> ").split()
             if len(user_input) == 2:
                 try:
-                    if len(user_input) == 2:
-                        eval(f"{user_input[0]}('{user_input[1]}')")
+                    eval(f"{user_input[0]}('{user_input[1]}')")
                 except Exception:
                     print("[bold][red]Try again![/bold][/red]")
             elif user_input[0] == "quit":
                 active = False
             elif user_input[0] == "help":
                 help()
+            elif user_input[0] == "clear":
+                screen_clear()
         except:
             continue
 
 
 if __name__ == "__main__":
+    help()
     start()
