@@ -116,6 +116,8 @@ def start():
                 help()
             elif user_input[0] == "clear":
                 screen_clear()
+            else:
+                print("[bold][red]Try again![/bold][/red]")
         except:
             continue
 
