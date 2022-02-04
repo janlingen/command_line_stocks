@@ -77,14 +77,20 @@ def cmp(symbols):
     print("[red]-[/red]"*105)
 
 
+def market():
+    lst = information_filter.get_market()
+    print(tabulate(lst))
+
+
 def help():
     print(Panel(
         """    - find a symbol by typing [red]symbol suggestions [/red]
     - use a command followed by symbol
-    - list of commands:
+    - list of stock related commands:
     - [bold][magenta]name, marketcap, price, trailingpe, forwardpe, yeareps, yearpe, twoav, divyield[/magenta][/bold]
     - for example [red]price AAPL[/red]
     - to compare multiple stocks use: [red]cmp symbol_1,...,symbol_n[/red]
+    - for a market overview [red]market[/red]
     - for help use [red]help[/red]
     - to clear the consol use [red]clear[/red]
     - to close the program use [red]quit[/red]""",
@@ -110,12 +116,14 @@ def start():
                     eval(f"{user_input[0]}('{user_input[1]}')")
                 except Exception:
                     print("[bold][red]Try again![/bold][/red]")
-            elif user_input[0] == "quit":
-                active = False
+            elif user_input[0] == "market":
+                market()
             elif user_input[0] == "help":
                 help()
             elif user_input[0] == "clear":
                 screen_clear()
+            elif user_input[0] == "quit":
+                active = False
             else:
                 print("[bold][red]Try again![/bold][/red]")
         except:

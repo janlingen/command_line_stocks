@@ -1,4 +1,4 @@
-from raw_data_provider import get_stock_data, get_symbol_suggestions_data
+from raw_data_provider import get_market_summary, get_stock_data, get_symbol_suggestions_data
 
 
 def validate_data(data):
@@ -94,3 +94,16 @@ def get_stock(symbol):
     divyield = "{:.2f}".format(data["quoteResponse"]["result"][0].get(
         "trailingAnnualDividendYield", 0)*100) + " %"
     return [name, marketcap, price, twoav, trailingpe, divyield, currency]
+
+
+def get_market():
+    data = get_market_summary("US")
+    lst = []
+    for x in data["marketSummaryResponse"]["result"]:
+        name = x.get("shortName", "noName")
+        points = x.get("regularMarketPrice", 0).get("fmt")
+        if points == 0:
+            x.get("regularMarketPreviousClose", 0).get("fmt")
+        if name in ['S&P 500', 'Dow 30', 'Nasdaq', 'Russell 2000', 'EUR/USD']:
+            lst.append([name.split()[0], points])
+    return lst

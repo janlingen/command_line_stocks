@@ -22,3 +22,14 @@ def get_symbol_suggestions_data(suggested_name):
     response = get(names, headers=headers)
     data = json.loads(response.text)
     return data
+
+
+def get_market_summary(region):
+    load_dotenv()
+    TOKEN = getenv("TOKEN")
+    stocks = "https://yfapi.net/v6/finance/quote/marketSummary"
+    headers = {'x-api-key': TOKEN}
+    querystring = {"region": region}
+    response = request("GET", stocks, headers=headers, params=querystring)
+    data = json.loads(response.text)
+    return data
