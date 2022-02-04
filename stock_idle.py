@@ -79,7 +79,7 @@ def cmp(symbols):
 
 def help():
     print(Panel(
-        """- find a symbol by typing [red]symbol suggestions [/red]
+        """    - find a symbol by typing [red]symbol suggestions [/red]
     - use a command followed by symbol
     - list of commands:
     - [bold][magenta]name, marketcap, price, trailingpe, forwardpe, yeareps, yearpe, twoav, divyield[/magenta][/bold]
