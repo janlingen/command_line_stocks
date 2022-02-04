@@ -92,7 +92,7 @@ def help():
     - to compare multiple stocks use: [red]cmp symbol_1,...,symbol_n[/red]
     - for a market overview [red]market[/red]
     - for help use [red]help[/red]
-    - to clear the consol use [red]clear[/red]
+    - to clear the console use [red]clear[/red]
     - to close the program use [red]quit[/red]""",
         title="[bold][green]:chart_increasing: Welcome to CommandLineStocks :chart_increasing:[/green][/bold]",
         expand=False))
