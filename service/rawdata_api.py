@@ -5,9 +5,9 @@ import json
 
 
 def get_stock_data(stock_symbol):
+    data = {}
     load_dotenv()
     TOKEN = getenv("TOKEN")
-    data = {}
     stocks = "https://yfapi.net/v6/finance/quote"
     headers = {'x-api-key': TOKEN}
     querystring = {"symbols": stock_symbol}
@@ -29,9 +29,9 @@ def get_symbol_suggestions_data(suggested_name):
 
 
 def get_market_summary(region):
+    data = {}
     load_dotenv()
     TOKEN = getenv("TOKEN")
-    data = {}
     stocks = "https://yfapi.net/v6/finance/quote/marketSummary"
     headers = {'x-api-key': TOKEN}
     querystring = {"region": region}
