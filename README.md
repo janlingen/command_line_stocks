@@ -8,11 +8,10 @@ As we all know, comparing stocks is often an essential process when deciding whe
     - `pip install -r requirements.txt`
   - create an account at https://www.yahoofinanceapi.com/dashboard to get your `API TOKEN`
     - write the API TOKEN into `service/.env`
+  - :heavy_exclamation_mark: run `python app.py`
   - you can do 100 free requests a day
 
 ## how to use CommandLineStocks:
-  - there are two versions
-  - :heavy_exclamation_mark:Important: run `python app.py`:heavy_exclamation_mark:
   - list of commands:
       - `help` to show all commands and instructions
       - `clear` to clear the terminal
@@ -20,12 +19,12 @@ As we all know, comparing stocks is often an essential process when deciding whe
       - `quit` to end the program
       - `symbol name`, finds the symbol for a given stockname, for example symbol Microsoft
       - `name symbol`, returns the companys name, for example name MSFT
-      - `price symbol`
-      - `marketcap symbol`
-      - `trailingpe symbol`
-      - `forwardpe symbol`
-      - `yeareps symbol`
-      - `yearpe symbol`
-      - `twoav symbol`
-      - `divyield symbol`
+      - `price symbol`, returns the current price
+      - `marketcap symbol`, returns the companys valuation
+      - `trailingpe symbol`, returns the P/E Ratio based on last 12 month
+      - `forwardpe symbol`, returns the P/E Ratio based on estimated earning
+      - `yeareps symbol`, returns yearly earnings per share
+      - `yearpe symbol`, returns yearly P/E Ratio
+      - `twoav symbol`, returns the twohundred day average price 
+      - `divyield symbol`, returns the dividend yield
       - `cmp symbol_1,...,symbol_n`, compares multiple stocks in a table
