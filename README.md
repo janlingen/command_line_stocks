@@ -1,7 +1,7 @@
 # CommandLineStocks
 As we all know, comparing stocks is often an essential process when deciding where to invest our money. If we don't have an expensive tool like Bloomberg or something else, we have to open several tabs from Yahoo Finance or another website and jump back and forth to compare some key values of different stocks. This little tool aims to solve this problem by making it easier to access and compare raw data.
 
-![Screenshot](example1.png)
+![Screenshot](misc/example1.png)
 
 ## how to install:
   - install needed packages
