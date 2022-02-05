@@ -1,4 +1,4 @@
-from raw_data_provider import get_market_summary, get_stock_data, get_symbol_suggestions_data
+import service.rawdata_api as rawdata_api
 
 
 def validate_data(data):
@@ -7,13 +7,13 @@ def validate_data(data):
 
 
 def get_name(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
     return data["quoteResponse"]["result"][0].get("shortName", "noName")
 
 
 def get_marketcap(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
     marketcap = data["quoteResponse"]["result"][0].get("marketCap", 0)
     currency = data["quoteResponse"]["result"][0].get("currency", "none")
@@ -21,7 +21,7 @@ def get_marketcap(symbol):
 
 
 def get_price(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
     price = data["quoteResponse"]["result"][0].get("ask", 0)
     if price == 0:
@@ -31,19 +31,19 @@ def get_price(symbol):
 
 
 def get_trailing_pe(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
     return data["quoteResponse"]["result"][0].get("trailingPE", 0)
 
 
 def get_forward_pe(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
     return data["quoteResponse"]["result"][0].get("forwardPE", 0)
 
 
 def get_year_eps(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     eps = data["quoteResponse"]["result"][0].get("epsCurrentYear", 0)
     currency = data["quoteResponse"]["result"][0].get("currency", "none")
     validate_data(data)
@@ -51,19 +51,19 @@ def get_year_eps(symbol):
 
 
 def get_year_pe(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
     return data["quoteResponse"]["result"][0].get("priceEpsCurrentYear", 0)
 
 
 def get_trailing_dividend_yield(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
     return "{:.2f}".format(data["quoteResponse"]["result"][0].get("trailingAnnualDividendYield", 0)*100) + " %"
 
 
 def get_two_hundred_day_average(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
     average = data["quoteResponse"]["result"][0].get("twoHundredDayAverage", 0)
     currency = data["quoteResponse"]["result"][0].get("currency", "none")
@@ -71,7 +71,7 @@ def get_two_hundred_day_average(symbol):
 
 
 def get_symbol_suggestions(suggestion):
-    data = get_symbol_suggestions_data(suggestion)
+    data = rawdata_api.get_symbol_suggestions_data(suggestion)
     data = data["quotes"]
     suggestions = []
     for x in data:
@@ -82,7 +82,7 @@ def get_symbol_suggestions(suggestion):
 
 
 def get_stock(symbol):
-    data = get_stock_data(symbol)
+    data = rawdata_api.get_stock_data(symbol)
     name = data["quoteResponse"]["result"][0].get("shortName", "noName")
     marketcap = data["quoteResponse"]["result"][0].get("marketCap", 0)
     price = data["quoteResponse"]["result"][0].get("ask", 0)
@@ -97,7 +97,7 @@ def get_stock(symbol):
 
 
 def get_market():
-    data = get_market_summary("US")
+    data = rawdata_api.get_market_summary("US")
     lst = []
     for x in data["marketSummaryResponse"]["result"]:
         name = x.get("shortName", "noName")
