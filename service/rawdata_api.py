@@ -31,6 +31,7 @@ def get_symbol_suggestions_data(suggested_name):
 def get_market_summary(region):
     load_dotenv()
     TOKEN = getenv("TOKEN")
+    data = {}
     stocks = "https://yfapi.net/v6/finance/quote/marketSummary"
     headers = {'x-api-key': TOKEN}
     querystring = {"region": region}
