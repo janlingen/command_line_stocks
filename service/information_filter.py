@@ -44,9 +44,17 @@ def get_forward_pe(symbol):
 
 def get_year_eps(symbol):
     data = rawdata_api.get_stock_data(symbol)
+    validate_data(data)
     eps = data["quoteResponse"]["result"][0].get("epsCurrentYear", 0)
     currency = data["quoteResponse"]["result"][0].get("currency", "none")
+    return (eps, currency)
+
+
+def get_trailing_eps(symbol):
+    data = rawdata_api.get_stock_data(symbol)
     validate_data(data)
+    eps = data["quoteResponse"]["result"][0].get("epsTrailingTwelveMonths", 0)
+    currency = data["quoteResponse"]["result"][0].get("currency", "none")
     return (eps, currency)
 
 
@@ -83,6 +91,7 @@ def get_symbol_suggestions(suggestion):
 
 def get_stock(symbol):
     data = rawdata_api.get_stock_data(symbol)
+    validate_data(data)
     name = data["quoteResponse"]["result"][0].get("shortName", "noName")
     marketcap = data["quoteResponse"]["result"][0].get("marketCap", 0)
     price = data["quoteResponse"]["result"][0].get("ask", 0)

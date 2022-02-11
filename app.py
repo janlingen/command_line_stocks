@@ -33,11 +33,15 @@ def price(symbol):
 def trailingpe(symbol):
     data = s.get_trailing_pe(symbol)
     print(f"[red]-->[/red] [green]{data}[/green]")
+    if data == 0:
+        print("[red]--> Maybe the company is not profitable yet![/red]")
 
 
 def forwardpe(symbol):
     data = s.get_forward_pe(symbol)
     print(f"[red]-->[/red] [green]{data}[/green]")
+    if data == 0:
+        print("[red]--> Maybe the company is not profitable yet![/red]")
 
 
 def yeareps(symbol):
@@ -46,9 +50,17 @@ def yeareps(symbol):
         f"[red]-->[/red] [green]{data[0]}[/green] [green]{data[1]}[/green]")
 
 
+def trailingeps(symbol):
+    data = s.get_trailing_eps(symbol)
+    print(
+        f"[red]-->[/red] [green]{data[0]}[/green] [green]{data[1]}[/green]")
+
+
 def yearpe(symbol):
     data = s.get_year_pe(symbol)
     print(f"[red]-->[/red] [green]{data}[/green]")
+    if data == 0:
+        print("[red]--> Maybe the company is not profitable yet![/red]")
 
 
 def twoav(symbol):
@@ -83,7 +95,8 @@ def help():
         """    - find a symbol by typing [red]symbol suggestions [/red]
     - use a command followed by symbol
     - list of stock related commands:
-    - [bold][magenta]name, marketcap, price, trailingpe, forwardpe, yeareps, yearpe, twoav, divyield[/magenta][/bold]
+    - [bold][magenta]name, marketcap, price, trailingpe, forwardpe, yeareps,[/magenta][/bold]
+    - [bold][magenta]trailingeps, yearpe, twoav, divyield[/magenta][/bold]
     - for example [red]price AAPL[/red]
     - to compare multiple stocks use: [red]cmp symbol_1,...,symbol_n[/red]
     - for a market overview [red]market[/red]
