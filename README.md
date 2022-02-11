@@ -24,6 +24,7 @@ As we all know, comparing stocks is often an essential process when deciding whe
       - `trailingpe symbol`, returns the P/E Ratio based on last 12 month
       - `forwardpe symbol`, returns the P/E Ratio based on estimated earning
       - `yeareps symbol`, returns yearly earnings per share
+      -  `trailingeps symbol`, returns last twelve month earnings per share
       - `yearpe symbol`, returns yearly P/E Ratio
       - `twoav symbol`, returns the twohundred day average price 
       - `divyield symbol`, returns the dividend yield
