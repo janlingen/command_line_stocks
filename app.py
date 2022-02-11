@@ -1,4 +1,5 @@
 import os
+import sys
 import service as s
 from rich import print
 from rich.panel import Panel
@@ -126,5 +127,7 @@ def start():
 
 
 if __name__ == "__main__":
+    sys.stdin.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding='utf-8')
     help()
     start()
