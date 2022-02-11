@@ -104,6 +104,5 @@ def get_market():
         points = x.get("regularMarketPrice", 0).get("fmt")
         if points == 0:
             x.get("regularMarketPreviousClose", 0).get("fmt")
-        if name in ['S&P 500', 'Dow 30', 'Nasdaq', 'Russell 2000', 'EUR/USD']:
-            lst.append([name.split()[0], points])
+        lst.append([name.split()[0], points])
     return lst
