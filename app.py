@@ -102,7 +102,7 @@ def help():
     - for a market overview [red]market[/red]
     - for help use [red]help[/red]
     - to clear the console use [red]clear[/red]
-    - to close the program use [red]quit[/red]""",
+    - to close the program use [red]quit[/red] or [red]exit[/red]""",
         title="[bold][green]:chart_increasing: Welcome to CommandLineStocks :chart_increasing:[/green][/bold]",
         expand=False))
 
@@ -132,6 +132,8 @@ def start():
             elif user_input[0] == "clear":
                 screen_clear()
             elif user_input[0] == "quit":
+                active = False
+            elif user_input[0] == "exit":
                 active = False
             else:
                 print("[bold][red]Try again![/bold][/red]")
