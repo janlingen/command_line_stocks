@@ -8,7 +8,7 @@ As we all know, comparing stocks is often an essential process when deciding whe
     - `pip install -r requirements.txt`
   - create an account at https://www.yahoofinanceapi.com/dashboard to get your `API TOKEN`
     - write the API TOKEN into `service/.env`
-  - :heavy_exclamation_mark: run `python app.py`
+  - :heavy_exclamation_mark: run `python app.py` (I recommend adding an alias for more convenient use)
   - you can do 100 free requests a day
 
 ## how to use CommandLineStocks:
