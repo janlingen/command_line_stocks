@@ -1,6 +1,8 @@
 # CommandLineStocks
 As we all know, comparing stocks is often an essential process when deciding where to invest our money. If we don't have an expensive tool like Bloomberg or something else, we have to open several tabs from Yahoo Finance or another website and jump back and forth to compare some key values of different stocks. This little tool aims to solve this problem by making it easier to access and compare raw data.
 
+:heavy_exclamation_mark: To my regret, the underlying API is no longer available, I may try to switch to an alternative one. Hopefully the following pictures and source code can give a good impression of the project. :heavy_exclamation_mark:
+
 ![Screenshot](misc/example1.png)
 
 ## how to install:
